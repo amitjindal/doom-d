@@ -48,3 +48,25 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! beancount :recipe (:host github :repo "beancount/beancount-mode"))
+
+(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
+
+(package! flycheck)
+(package! py-autopep8)
+(package! blacken)
+(package! pip-requirements)
+(package! python-pytest)
+(package! python-pylint)
+(package! live-py-mode)
+(package! py-yapf)
+(package! direnv)
+(package! yasnippet)
+(package! dockerfile-mode)
+(package! ob-http)              ;; org-babel http for REST requests
+(package! nginx-mode)
+(package! prettier-js)
+(package! outshine)
+(package! dap-mode)             ;; debugging in emacs
+(package! web-mode)             ;; https://web-mode.org/
