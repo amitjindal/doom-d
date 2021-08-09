@@ -81,9 +81,10 @@
 ;; (setq doom-font (font-spec :family "Ubuntu Nerd Font" :size 16)
 ;;       doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 16))
 
-(setq doom-font (font-spec :family "Ubuntu Mono" :size 16)
+; (setq doom-font (font-spec :family "Ubuntu Mono" :size 16)
 ; (setq doom-font (font-spec :family "JetBrains Mono" :size 16 :weight 'medium)
-      doom-big-font (font-spec :family "Ubuntu Mono" :size 20)
+(setq doom-font (font-spec :family "Source Code Pro" :size 14)
+      doom-big-font (font-spec :family "Source Code Pro" :size 18)
 )
 (setq-default line-spacing 5)
 
