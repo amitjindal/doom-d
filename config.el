@@ -135,7 +135,6 @@
 
 (use-package! lsp-tailwindcss)
 
-
 ;; HTML web-mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -147,5 +146,8 @@
 (add-to-list 'auto-mode-alist '("\\.njk\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(add-to-list 'auto-mode-alist '("\\.svg\\'" . xml-mode))
+
 ;; Enable windows switching with SHIFT-<Arrow-Key>
 (windmove-default-keybindings)
+
