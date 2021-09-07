@@ -27,6 +27,7 @@
 ;; ** Outshine mini mode for all major modes
 (add-hook 'prog-mode-hook 'outshine-mode)
 
+(use-package! company-ctags :config (company-ctags-auto-setup))
 
 ;; * Languages
 
@@ -151,4 +152,12 @@
 
 ;; Enable windows switching with SHIFT-<Arrow-Key>
 (windmove-default-keybindings)
+
+(global-visual-line-mode t)
+
+;; Toggle minimap
+(define-key evil-normal-state-map (kbd "SPC t m") 'minimap-mode)
+(setq minimap-window-location 1)
+
+(setq display-line-numbers-type 'relative)
 
