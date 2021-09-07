@@ -148,6 +148,19 @@
 (add-to-list 'auto-mode-alist '("\\.njk\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(with-eval-after-load 'company
+  ;; @see https://github.com/redguardtoo/emacs.d/commit/2ff305c1ddd7faff6dc9fa0869e39f1e9ed1182d
+  (defadvice company-in-string-or-comment (around company-in-string-or-comment-hack activate)
+    (if (memq major-mode '(html-mode web-mode nxml-mode))
+        (setq ad-return-value nil)
+      ad-do-it)))
+;; (setq web-mode-ac-sources-alist '(
+    ;; ("css" . (ac-source-css-property))
+    ;; ("html" . (ac-source-words-in-buffer ac-source-abbrev)))
+;; )
+    ;; ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+    ;; ("css" . (ac-source-css-property ac-source-emmet-css-snippets)))
+
 (add-to-list 'auto-mode-alist '("\\.svg\\'" . xml-mode))
 
 ;; Enable windows switching with SHIFT-<Arrow-Key>

@@ -22,14 +22,13 @@
        :completion
        (company           ; the ultimate code completion backend
 	 ;; +tng
-	 +auto
+	 ;; +auto
 	 +childframe)
-       helm              ; the *other* search engine for love and life
+       ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        (ivy               ; a search engine for love and life
-	 +prescient
-	 -childframe
-	 -fuzzy
+	 +childframe
+	 +fuzzy
 	 +icons)
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -47,7 +46,9 @@
        nav-flash         ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
-       (popup +defaults)   ; tame sudden yet inevitable temporary windows
+       (popup           ; tame sudden yet inevitable temporary windows
+          +all
+          +defaults)
        tabs              ; a tab bar for Emacs
        (treemacs          ; a project drawer, like neotree but cooler
 	 +icons)
@@ -182,7 +183,8 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       (web +lsp)          ; the tubes
+       ;(web +lsp)          ; the tubes
+       web-mode          ; the tubes
        (yaml +lsp)         ; JSON, but readable
 
        :email
