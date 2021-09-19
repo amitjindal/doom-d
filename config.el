@@ -3,6 +3,17 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+
+(add-to-list 'default-frame-alist
+             '(ns-transparent-titlebar . t))
+
+(add-to-list 'default-frame-alist
+             '(ns-appearance . light))
+
+(global-auto-revert-mode t)
+
+;; (move-text-default-bindings)
+
 ;; * Look and feel
 
 ;; ** Start maximised (cross-platf)
@@ -18,11 +29,8 @@
 (setq lsp-headerline-breadcrumb-enable t)
 
 ;; ** doom-gruvbox for the theme
-(setq doom-theme 'doom-gruvbox display-line-numbers-type 'relative)
+;; (setq doom-theme 'doom-gruvbox display-line-numbers-type 'relative)
 
-;; ** error in treemacs icons
-(doom-themes-treemacs-config)
-(after! treemacs (treemacs-load-theme "doom-colors"))
 
 ;; ** Outshine mini mode for all major modes
 (add-hook 'prog-mode-hook 'outshine-mode)
@@ -33,7 +41,7 @@
 
 ;; ** Python
 ;; *** Enable dap-mode for python
-(add-hook 'python-mode (require 'dap-python))
+;; (add-hook 'python-mode (require 'dap-python))
 
 
 ;; * Keybinds
@@ -57,6 +65,8 @@
 
 ;; ** expand region
 (map! :leader (:desc "Expand region"  "v" #'er/expand-region))
+
+(map! :ne "SPC / r" #'deadgrep)
 
 
 ;; ** dired hide files toggle on M-h
@@ -84,23 +94,35 @@
 
 ; (setq doom-font (font-spec :family "Ubuntu Mono" :size 16)
 ; (setq doom-font (font-spec :family "JetBrains Mono" :size 16 :weight 'medium)
-(setq doom-font (font-spec :family "Source Code Pro" :size 14)
-      doom-big-font (font-spec :family "Source Code Pro" :size 18)
+(setq
+   ;; doom-font (font-spec :family "Source Code Pro" :size 14)
+   ;; doom-big-font (font-spec :family "Source Code Pro" :size 18)
+   doom-font (font-spec :family "Liberation Mono" :size 15)
+   doom-big-font (font-spec :family "Liberation Mono" :size 20)
 )
-(setq-default line-spacing 5)
+;; (setq-default line-spacing 5)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-; (setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one)
 ; (setq doom-theme 'doom-one-light)
 ; (setq doom-theme 'doom-nord-light)
 ; (setq doom-theme 'doom-solarized-light)
 ; (setq doom-theme 'doom-solarized-dark)
 
+;; ** error in treemacs icons
+(doom-themes-treemacs-config)
+(after! treemacs (treemacs-load-theme "doom-colors"))
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
+;; Projectile Config: https://docs.projectile.mx/projectile/configuration.html
+(setq projectile-sort-order 'recently-active)
+;; (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/work/git/" . 1)))
+(setq projectile-project-search-path '( ("~/work/git/" . 1)))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
