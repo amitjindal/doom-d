@@ -6,30 +6,32 @@
 ;; use 'M-x doom/reload'.
 
 (package! beancount :recipe (:host github :repo "beancount/beancount-mode"))
-
-(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
-
-(package! flycheck)
-(package! py-autopep8)
 (package! blacken)
-(package! pip-requirements)
-(package! python-pytest)
-(package! python-pylint)
-(package! live-py-mode)
-(package! py-yapf)
-(package! direnv)
-(package! yasnippet)
+(package! company-ctags)
+;; (package! dap-mode)             ;; debugging in emacs
+(package! deadgrep)
 (package! dockerfile-mode)
-(package! ob-http)              ;; org-babel http for REST requests
-(package! nginx-mode)
-(package! prettier-js)
+;; (package! direnv)
+;; (package! pip-requirements)
+;; (package! python-pytest)
+(package! flycheck)
+(package! live-py-mode)
+(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
+;; (package! move-text)
+;; (package! ob-http)              ;; org-babel http for REST requests
+;; (package! nginx-mode)
+(package! ob-typescript)
 (package! outshine)
-(package! dap-mode)             ;; debugging in emacs
-
+(package! org-fancy-priorities)
+(package! prettier-js)
+(package! py-autopep8)
+(package! py-yapf)
+(package! python-pylint)
+(package! sql-indent)
 ;;(package! auto-complete)        ;; Auto Complete for web-mode
 (package! web-mode)             ;; https://web-mode.org/
+(package! yasnippet)
 
-(package! company-ctags)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
