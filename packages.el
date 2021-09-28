@@ -27,6 +27,7 @@
 (package! py-autopep8)
 (package! py-yapf)
 (package! python-pylint)
+(package! speed-type)
 (package! sql-indent)
 ;;(package! auto-complete)        ;; Auto Complete for web-mode
 (package! web-mode)             ;; https://web-mode.org/
